@@ -6,16 +6,25 @@
 <title>Razor</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
 <link href="razor.css" rel="stylesheet" type="text/css">
+<script src="handsontable.full.js"></script>
+<link rel="stylesheet" media="screen" href="handsontable.full.css">
 
 </head>
 
 <body>
 
 <div id="app">
-    {{ message }}
-    <input v-model="csv_file_content">
-    <button v-on:click="groupMethod">排班</button>
-    <a href="data:application/octet-stream,field1%2Cfield2%0Afoo%2Cbar%0Agoo%2Cgai%0A">CSV Octet</a>
+    <p>Hello It's Razor!</p>
+    <p>Razor是一个简单的分班工具，用于将不同背景的学生平均分到各个班级。</p>
+    <p>下面的excel表格是可以编辑的，请从你本地的excel表格里按照规定的格式将数据复制过来</p>
+    <p>再在分班数量里输入想要分班的数目，如分成7个班输入7，再按排班</p>
+    <p>生成结果可以直接复制到本地表格</p>
+    <input v-model="group_num_string" placeholder="分班数量">
+    <button v-on:click="main">排班</button>
+
+    <div id="table_input"></div>
+    <div id="table_output"></div>
+
 </div>
 </body>
 <script src="razor.js"></script>
