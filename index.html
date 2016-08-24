@@ -13,6 +13,9 @@
 
 <div id="app">
     {{ message }}
+    <input v-model="csv_file_content">
+    <button v-on:click="groupMethod">排班</button>
+    <a href="data:application/octet-stream,field1%2Cfield2%0Afoo%2Cbar%0Agoo%2Cgai%0A">CSV Octet</a>
 </div>
 </body>
 <script src="razor.js"></script>
