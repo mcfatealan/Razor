@@ -15,15 +15,24 @@
 
 <div id="app">
     <p>Hello It's Razor!</p>
+    <p>================================</p>
     <p>Razor是一个简单的分班工具，用于将不同背景的学生平均分到各个班级。</p>
     <p>下面的excel表格是可以编辑的，请从你本地的excel表格里按照规定的格式将数据复制过来</p>
     <p>再在分班数量里输入想要分班的数目，如分成7个班输入7，再按排班</p>
     <p>生成结果可以直接复制到本地表格</p>
+    <p>================================</p>
+    <p>分班遵循以下规则</p>
+    <p>1.每个班男女数量均衡</p>
+    <p>2.每个班成绩分布相对均衡(不保证绝对意义上的均衡)</p>
+    <p>3.每次排班的过程是随机哈希的，可以多次排班以达到较为理想的效果</p>
+    <p>================================</p>
     <input v-model="group_num_string" placeholder="分班数量">
     <button v-on:click="main">排班</button>
+    <div>{{message}}</div>
 
     <div id="table_input"></div>
     <div id="table_output"></div>
+    <p>{{{staticsMessage}}}</p>
 
 </div>
 </body>
